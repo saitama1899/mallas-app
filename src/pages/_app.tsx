@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout/Layout";
+import { AppProvider } from "@/context/AppContext";
 import { noHeaderRoutes } from "@/data/app";
 import { MainTheme } from "@/theme/MainTheme";
 import type { AppProps } from "next/app";
@@ -11,14 +12,14 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 	const hide = noHeaderRoutes.includes(router.pathname);
 
 	return (
-		<>
+		<AppProvider>
 			<GlobalStyle />
 			<ThemeProvider theme={MainTheme}>
 				<Layout hide={hide}>
 					<Component {...pageProps} />
 				</Layout>
 			</ThemeProvider>
-		</>
+		</AppProvider>
 	);
 };
 
