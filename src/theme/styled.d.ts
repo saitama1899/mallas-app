@@ -4,6 +4,7 @@ declare module "styled-components" {
 	export interface DefaultTheme {
 		colors: {
 			primary: string;
+      input_placeholder: string;
 		};
 		layout: {
 			headerHeight: string;
