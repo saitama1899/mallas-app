@@ -1,8 +1,7 @@
-import { placeholders } from "@/data/app";
+import { useAppContext } from "@/context/AppContext";
 import useSearchBar from "@/hooks/useSearchBar";
 import Image from "next/image";
 import type React from "react";
-import { useState } from "react";
 import {
 	SearchBarWrapper,
 	SearchButton,
@@ -10,15 +9,14 @@ import {
 	SearchResults,
 } from "./SeachBar.style";
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-	const { query, results, handleInputChange, handleSearch } = useSearchBar({
-		onSearch,
-	});
+const SearchBar: React.FC = () => {
+	const { query, handleInputChange, handleSearch } = useSearchBar();
+	const { results } = useAppContext();
 
 	return (
 		<>
 			<SearchBarWrapper>
-				<SearchButton onClick={handleSearch}>
+				<SearchButton onClick={() => handleSearch(query)}>
 					<Image
 						src="/images/icons/search.svg"
 						alt="Search Icon"
@@ -28,7 +26,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 				</SearchButton>
 				<SearchInput
 					type="text"
-					placeholder={placeholders.input.character}
+					placeholder="Search a character..."
 					value={query}
 					onChange={handleInputChange}
 				/>
