@@ -1,20 +1,30 @@
+import { useAppContext } from "@/context/AppContext";
+import fetchData from "@/utils/api";
+import { debounce } from "@/utils/debounce";
 import { useCallback, useMemo, useState } from "react";
-import { useAppContext } from "../context/AppContext";
-import { debounce } from "../utils/debounce";
 
 const useSearchBar = () => {
 	const { setLoading, setResults } = useAppContext();
 	const [query, setQuery] = useState<string>("");
 
 	const handleSearch = useCallback(
-		(query: string) => {
+		async (query: string) => {
 			console.log("Searching for:", query);
 			setLoading(true);
 
-			setTimeout(() => {
-				setResults(query ? `Found results for "${query}"` : "No results found");
+			try {
+				const data = await fetchData({
+					queryParams: { nameStartsWith: query },
+					model: "characters",
+				});
+        console.log(data);
+        
+				setResults(data.data.results);
+			} catch (error) {
+				setResults("No results found");
+			} finally {
 				setLoading(false);
-			}, 500);
+			}
 		},
 		[setLoading, setResults],
 	);
