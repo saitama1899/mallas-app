@@ -4,10 +4,15 @@ const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: black;
   color: white;
-  padding: 10px;
+  height: ${({ theme }) => theme.layout.headerHeight};
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 48px;
+  align-items: center;
+  box-sizing: border-box;
 `;
 
 export default HeaderWrapper;

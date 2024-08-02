@@ -1,10 +1,24 @@
+import Image from "next/image";
 import type React from "react";
 import HeaderWrapper from "./Header.style";
 
 const Header: React.FC = () => {
 	return (
 		<HeaderWrapper>
-			<h1>Marvel</h1>
+			<Image
+				src="/images/marvel-logo.svg"
+				alt="Marvel Logo"
+				className="logo"
+				width={130}
+				height={52}
+			/>
+			<Image
+				src="/images/fav.png"
+				alt="Marvel Logo"
+				className="fav"
+				width={24}
+				height={21}
+			/>
 		</HeaderWrapper>
 	);
 };

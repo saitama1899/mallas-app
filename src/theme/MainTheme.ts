@@ -5,6 +5,6 @@ export const MainTheme: DefaultTheme = {
 		primary: "#EC1D24",
 	},
 	layout: {
-		headerHeight: "60px",
-	}
+		headerHeight: "84px",
+	},
 };
