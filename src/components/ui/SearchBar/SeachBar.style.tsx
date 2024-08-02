@@ -27,3 +27,9 @@ export const SearchButton = styled.button`
   cursor: pointer;
   margin-top: 2px;
 `;
+
+export const SearchResults = styled.div`
+  text-transform: uppercase;
+  margin-top: 14px;
+  font-size: 13px;
+`;
