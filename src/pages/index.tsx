@@ -1,14 +1,12 @@
-import React from "react";
+import Home from "@/components/pages/Home/Home";
 import GlobalStyle from "../styles/GlobalStyle";
-import Test from "@/components/Test";
 
-const Home: React.FC = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <Test />
-    </>
-  );
+const Index = () => {
+	return (
+		<>
+			<Home />
+		</>
+	);
 };
 
-export default Home;
+export default Index;

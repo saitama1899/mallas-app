@@ -1,6 +1,9 @@
-import { createGlobalStyle, GlobalStyleComponent } from "styled-components";
+import {
+	type GlobalStyleComponent,
+	createGlobalStyle,
+} from "styled-components";
 
-const GlobalStyle: GlobalStyleComponent<{}, {}> = createGlobalStyle`
+const GlobalStyle: GlobalStyleComponent<object, object> = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
