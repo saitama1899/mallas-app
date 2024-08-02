@@ -17,7 +17,9 @@ const App = () => (
 	</Html>
 );
 
-App.getInitialProps = async (ctx: DocumentContext) => {
+App.getInitialProps = async (
+	ctx: DocumentContext,
+): Promise<Record<string | number, unknown>> => {
 	const sheet = new ServerStyleSheet();
 	const originalRenderPage = ctx.renderPage;
 

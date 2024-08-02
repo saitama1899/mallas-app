@@ -1,12 +1,7 @@
 import Home from "@/components/pages/Home/Home";
-import GlobalStyle from "../styles/GlobalStyle";
 
-const Index = () => {
-	return (
-		<>
-			<Home />
-		</>
-	);
+const Index: React.FC = () => {
+	return <Home />;
 };
 
 export default Index;

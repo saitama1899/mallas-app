@@ -1,6 +1,6 @@
 import HomeWrapper from "./Home.style";
 
-const Home = () => {
+const Home: React.FC = () => {
   return <HomeWrapper>Home</HomeWrapper>;
 };
 
