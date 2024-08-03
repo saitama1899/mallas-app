@@ -52,7 +52,7 @@ const MovieDetail: React.FC<MovieDetailScreenProps> = ({ movie }) => {
 
 			<CompaniesWrapper>
 				<CompaniesContent>
-					<CompaniesTitle>Companies</CompaniesTitle>
+					<CompaniesTitle>Producers</CompaniesTitle>
 					{movie.production_companies?.length ? (
 						<CompaniesGrid ref={scrollRef} draggable="false">
 							{movie?.production_companies?.map((company) => (

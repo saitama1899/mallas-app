@@ -73,6 +73,7 @@ const Description = styled.p`
 const CompaniesWrapper = styled.div`
   flex-grow: 1;
   padding: 0 48px;
+  cursor: grab;
 `;
 
 const CompaniesContent = styled.div`
@@ -93,9 +94,9 @@ const CompaniesGrid = styled.div`
   display: flex;
   gap: 45px;
   overflow-x: auto;
-  padding-bottom: 20px;
+  padding-bottom: 60px;
   user-select: none;
-  height: 125px;
+  height: auto;
   &::-webkit-scrollbar {
     height: 5px;
   }
