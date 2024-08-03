@@ -13,6 +13,7 @@ const HeaderWrapper = styled.header`
   padding: 0 48px;
   align-items: center;
   box-sizing: border-box;
+  z-index: 1;
 `;
 
 export default HeaderWrapper;

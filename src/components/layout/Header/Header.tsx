@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 			/>
 			<Image
 				src="/images/icons/fav.svg"
-				alt="Marvel Logo"
+				alt="Favorite"
 				className="fav"
 				width={24}
 				height={21}
