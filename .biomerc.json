@@ -1,15 +1,22 @@
 {
-  "semi": true,
-  "trailingComma": "es5",
-  "singleQuote": true,
-  "printWidth": 100,
-  "tabWidth": 2,
-  "useTabs": false,
-  "organizeImports": {
-    "enabled": true
-  },
-  "importSort": {
-    "order": ["builtin", "external", "internal"],
-    "separateGroups": true
-  }
+	"semi": true,
+	"trailingComma": "es5",
+	"singleQuote": true,
+	"printWidth": 100,
+	"tabWidth": 2,
+	"useTabs": false,
+	"organizeImports": {
+		"enabled": true
+	},
+	"importSort": {
+		"order": ["builtin", "external", "internal"],
+		"separateGroups": true
+	},
+	"linter": {
+		"rules": {
+			"correctness": {
+				"useExhaustiveDependencies": "off"
+			}
+		}
+	}
 }
