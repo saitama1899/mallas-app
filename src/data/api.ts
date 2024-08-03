@@ -17,7 +17,7 @@ if (
 
 const apiPaths = {
 	movie: "movie",
-	discover: "discover",
+	popular: "popular",
 	search: "search",
 };
 
