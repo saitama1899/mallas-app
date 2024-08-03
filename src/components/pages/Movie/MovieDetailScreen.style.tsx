@@ -95,6 +95,9 @@ const CompaniesWrapper = styled.div`
   flex-grow: 1;
   padding: 0 48px;
   cursor: grab;
+  @media (max-width: ${(props) => props.theme.breakpoints.sd}) {
+    padding: 0 14px;
+  }
 `;
 
 const CompaniesContent = styled.div`
