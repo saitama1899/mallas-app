@@ -1,8 +1,12 @@
+import useFavorites from "@/hooks/useFavorites";
 import Image from "next/image";
 import type React from "react";
-import HeaderWrapper from "./Header.style";
+import { FavCount, HeaderWrapper } from "./Header.style";
 
 const Header: React.FC = () => {
+	const { getFavoriteMovies } = useFavorites();
+	const favCount = getFavoriteMovies().length;
+
 	return (
 		<HeaderWrapper>
 			<Image
@@ -12,13 +16,16 @@ const Header: React.FC = () => {
 				width={130}
 				height={52}
 			/>
-			<Image
-				src="/images/icons/fav.svg"
-				alt="Favorite"
-				className="fav"
-				width={24}
-				height={21}
-			/>
+			<FavCount>
+				<Image
+					src={`/images/icons/${favCount > 0 ? "fav" : "no-fav"}.svg`}
+					alt="Marvel Logo"
+					className="fav"
+					width={17}
+					height={15}
+				/>
+				<span>{favCount}</span>
+			</FavCount>
 		</HeaderWrapper>
 	);
 };

@@ -32,4 +32,5 @@ export const SearchResults = styled.div`
   text-transform: uppercase;
   margin-top: 14px;
   font-size: 13px;
+  height: 15px;
 `;

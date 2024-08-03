@@ -16,4 +16,13 @@ const HeaderWrapper = styled.header`
   z-index: 1;
 `;
 
-export default HeaderWrapper;
+const FavCount = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  span {
+    font-size: 13px;
+  }
+`;
+
+export { HeaderWrapper, FavCount };
