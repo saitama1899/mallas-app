@@ -1,16 +1,27 @@
+import Movie from "@/components/ui/Cards/Movie";
 import SearchBar from "@/components/ui/SearchBar/SearchBar";
-import useHome from "@/hooks/useHome";
-import HomeWrapper from "./Home.style";
+import Spinner from "@/components/ui/Spinner/Spinner";
 import { useAppContext } from "@/context/AppContext";
+import useHome from "@/hooks/useHome";
+import { GridContainer, GridItem, HomeWrapper } from "./Home.style";
 
 const Home: React.FC = () => {
-  const { loading } = useAppContext();
-
+	const { loading, movies } = useAppContext();
 	useHome();
 	return (
 		<HomeWrapper>
 			<SearchBar />
-      {loading ? <p>Loading...</p> : <p>Results</p>}
+			{loading ? (
+				<Spinner />
+			) : (
+				<GridContainer>
+					{movies.results.map((movie) => (
+						<GridItem key={movie.id}>
+							<Movie {...movie} />
+						</GridItem>
+					))}
+				</GridContainer>
+			)}
 		</HomeWrapper>
 	);
 };
