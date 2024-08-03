@@ -12,7 +12,7 @@ const Header: React.FC = () => {
 		<HeaderWrapper>
 			<Link href={"/"}>
 				<Image
-					src="/images/marvel-logo.svg"
+					src="/images/movies-logo.svg"
 					alt="Marvel Logo"
 					className="logo"
 					width={130}
