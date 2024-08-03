@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export interface LayoutProps {
+interface LayoutProps {
 	children: ReactNode;
 	hide?: boolean;
 }
