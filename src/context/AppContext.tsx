@@ -1,5 +1,5 @@
 import { initialMovies } from "@/data/movies";
-import type { Movie, Movies } from "@/types/movies";
+import type { Movie, MovieDetail, Movies } from "@/types/movies";
 import type React from "react";
 import { type ReactNode, createContext, useContext, useState } from "react";
 
@@ -8,10 +8,12 @@ interface AppContextProps {
 	results: string;
 	movies: Movies;
 	favorites: Movie[];
+	selectedMovie: MovieDetail | null;
 	setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 	setResults: React.Dispatch<React.SetStateAction<string>>;
 	setMovies: React.Dispatch<React.SetStateAction<Movies>>;
 	setFavorites: React.Dispatch<React.SetStateAction<Movie[]>>;
+	setSelectedMovie: React.Dispatch<React.SetStateAction<MovieDetail | null>>;
 }
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);
@@ -23,6 +25,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
 	const [results, setResults] = useState("");
 	const [movies, setMovies] = useState<Movies>(initialMovies);
 	const [favorites, setFavorites] = useState<Movie[]>([]);
+	const [selectedMovie, setSelectedMovie] = useState<MovieDetail | null>(null);
 
 	return (
 		<AppContext.Provider
@@ -31,6 +34,8 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
 				results,
 				movies,
 				favorites,
+				selectedMovie,
+				setSelectedMovie,
 				setLoading,
 				setResults,
 				setMovies,
