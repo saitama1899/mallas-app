@@ -14,9 +14,13 @@ const HeaderWrapper = styled.header`
   align-items: center;
   box-sizing: border-box;
   z-index: 1;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 `;
 
-const FavCount = styled.div`
+const FavCount = styled.a`
   display: flex;
   align-items: flex-start;
   gap: 8px;

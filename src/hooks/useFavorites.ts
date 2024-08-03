@@ -1,24 +1,44 @@
 import { useAppContext } from "@/context/AppContext";
 import type { Movie } from "@/types/movies";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const useFavorites = () => {
 	const FAVORITES_KEY = "favorites";
 	const { movies, setMovies } = useAppContext();
+	const [isClient, setIsClient] = useState(false);
 
 	useEffect(() => {
-		checkFavorites();
+		if (typeof window !== "undefined") setIsClient(true);
 	}, []);
 
+	useEffect(() => {
+		if (isClient) {
+			checkFavorites();
+			handleFavoritePage();
+		}
+	}, [isClient]);
+
 	const getFavoriteMovies = (): Movie[] => {
+		if (!isClient) return [];
 		const favorites = localStorage.getItem(FAVORITES_KEY);
 		return favorites ? JSON.parse(favorites) : [];
+	};
+
+	const handleFavoritePage = () => {
+		if (window.location.pathname === "/favorites") {
+			const favorites = getFavoriteMovies();
+			setMovies((prev) => ({
+				...prev,
+				results: favorites,
+			}));
+		}
 	};
 
 	const addFavoriteMovie = (movie: Movie): void => {
 		const favorites = getFavoriteMovies();
 		if (!favorites.some((fav) => fav.id === movie.id)) {
-			favorites.push(movie);
+			const newMovie = { ...movie, favorite: true };
+			favorites.push(newMovie);
 			localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
 		}
 	};
