@@ -1,5 +1,5 @@
 import { useAppContext } from "@/context/AppContext";
-import type { Movie } from "@/types/movies";
+import type { Movie, MovieDetail } from "@/types/movies";
 import { useEffect, useState } from "react";
 
 const useFavorites = () => {
@@ -49,7 +49,8 @@ const useFavorites = () => {
 		localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
 	};
 
-	const handleFavorite = (movie: Movie): void => {
+	const handleFavorite = (e: React.MouseEvent, movie: Movie): void => {
+		e.stopPropagation();
 		const { results } = movies;
 		const isFavorite = results.some((m) => m.id === movie.id && m.favorite);
 		if (isFavorite) {
@@ -77,12 +78,18 @@ const useFavorites = () => {
 		}));
 	};
 
+	const checkFavoriteDetail = (movie: MovieDetail): boolean => {
+		const favorites = getFavoriteMovies();
+		return favorites.some((fav) => fav.id === movie.id);
+	};
+
 	return {
 		getFavoriteMovies,
 		addFavoriteMovie,
 		removeFavoriteMovie,
 		handleFavorite,
 		checkFavorites,
+		checkFavoriteDetail,
 	};
 };
 
