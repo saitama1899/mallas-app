@@ -29,7 +29,7 @@ const fetchData = async ({
 
 		return response.data;
 	} catch (error) {
-		console.error("Error fetching data from Marvel API:", error);
+		console.error("Error fetching data API:", error);
 		throw error;
 	}
 };
