@@ -18,6 +18,7 @@ import {
 	MovieDetailWrapper,
 	Poster,
 	Title,
+	MainInfoWrapper,
 } from "./MovieDetailScreen.style";
 
 interface MovieDetailScreenProps {
@@ -34,7 +35,7 @@ const MovieDetail: React.FC<MovieDetailScreenProps> = ({ movie }) => {
 			<HeaderWrapper>
 				<HeaderContent>
 					<Poster src={movie.backdrop_path ?? ""} alt={movie.title} />
-					<div>
+					<MainInfoWrapper>
 						<MainInfo>
 							<Title>{movie.title}</Title>
 							<Image
@@ -46,7 +47,7 @@ const MovieDetail: React.FC<MovieDetailScreenProps> = ({ movie }) => {
 							/>
 						</MainInfo>
 						<Description>{movie.overview}</Description>
-					</div>
+					</MainInfoWrapper>
 				</HeaderContent>
 			</HeaderWrapper>
 

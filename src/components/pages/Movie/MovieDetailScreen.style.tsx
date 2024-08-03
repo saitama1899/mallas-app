@@ -24,6 +24,15 @@ const HeaderWrapper = styled.div`
     background-color: white;
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
   }
+  @media (max-width: ${(props) => props.theme.breakpoints.sd}) {
+    height: auto;
+  }
+`;
+
+const MainInfoWrapper = styled.div`
+  @media (max-width: ${(props) => props.theme.breakpoints.sd}) {
+    padding: 14px;
+  }
 `;
 
 const HeaderContent = styled.div`
@@ -33,12 +42,21 @@ const HeaderContent = styled.div`
   margin: 0 auto;
   gap: 48px;
   padding-right: 48px;
+  @media (max-width: ${(props) => props.theme.breakpoints.sd}) {
+    flex-direction: column;
+    padding-right: 0;
+    gap: 28px;
+  }
 `;
 
 const Poster = styled.img`
   width: 320px;
   height: 320px;
   object-fit: cover;
+  @media (max-width: ${(props) => props.theme.breakpoints.sd}) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const Image = styled.img`
@@ -62,6 +80,9 @@ const Title = styled.h1`
   font-size: 40px;
   text-transform: uppercase;
   color: white;
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    font-size: 32px;
+  }
 `;
 
 const Description = styled.p`
@@ -150,4 +171,5 @@ export {
 	Poster,
 	MainInfo,
 	CompaniesContent,
+	MainInfoWrapper,
 };

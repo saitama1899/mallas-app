@@ -11,5 +11,14 @@ declare module "styled-components" {
 		layout: {
 			headerHeight: string;
 		};
+		breakpoints: {
+			xs: string;
+			sm: string;
+			sd: string;
+			md: string;
+			lg: string;
+			xl: string;
+			xxl: string;
+		};
 	}
 }
