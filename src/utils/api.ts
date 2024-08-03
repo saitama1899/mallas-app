@@ -1,34 +1,30 @@
-import crypto from "crypto";
-import { baseUrl, privateKey, publicKey } from "@/data/api";
+import { baseUrl, privateKey } from "@/data/api";
 import axios from "axios";
 
-const generateHash = (ts: string) => {
-	return crypto
-		.createHash("md5")
-		.update(ts + privateKey + publicKey)
-		.digest("hex");
-};
+const fetchData = async ({
+	id,
+	queryParams,
+	path = "",
+	method = "GET",
+}: FetchDataParams) => {
+	const options = {
+		method: method,
+		headers: {
+			accept: "application/json",
+			Authorization: `Bearer ${privateKey}`,
+		},
+	};
 
-const fetchData = async ({ id, queryParams, model = "" }: FetchDataParams) => {
-	const ts = new Date().getTime().toString();
-	const hash = generateHash(ts);
-	const apikey = publicKey;
-
-	const url = `${baseUrl}${model ? `/${model}` : ""}${id ? `/${id}` : ""}`;
+	const url = `${baseUrl}${path ? `/${path}` : ""}${id ? `/${id}` : ""}`;
 
 	const params = {
-		ts,
-		apikey,
-		hash,
 		...queryParams,
 	};
 
 	try {
 		const response = await axios.get(url, {
 			params,
-			headers: {
-				Accept: "*/*",
-			},
+			...options,
 		});
 
 		return response.data;

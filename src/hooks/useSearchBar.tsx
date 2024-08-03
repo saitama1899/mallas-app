@@ -1,4 +1,5 @@
 import { useAppContext } from "@/context/AppContext";
+import { apiPaths } from "@/data/api";
 import fetchData from "@/utils/api";
 import { debounce } from "@/utils/debounce";
 import { useCallback, useMemo, useState } from "react";
@@ -6,6 +7,7 @@ import { useCallback, useMemo, useState } from "react";
 const useSearchBar = () => {
 	const { setLoading, setResults } = useAppContext();
 	const [query, setQuery] = useState<string>("");
+	const { search, movie } = apiPaths;
 
 	const handleSearch = useCallback(
 		async (query: string) => {
@@ -13,20 +15,18 @@ const useSearchBar = () => {
 			setLoading(true);
 
 			try {
-				const data = await fetchData({
-					queryParams: { nameStartsWith: query },
-					model: "characters",
+				const { data } = await fetchData({
+					queryParams: { query: query },
+					path: `${search}/${movie}`,
 				});
-        console.log(data);
-        
-				setResults(data.data.results);
+				setResults(data.results);
 			} catch (error) {
 				setResults("No results found");
 			} finally {
 				setLoading(false);
 			}
 		},
-		[setLoading, setResults],
+		[setLoading, setResults, search, movie],
 	);
 
 	const debouncedSearch = useMemo(
