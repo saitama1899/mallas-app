@@ -3,6 +3,7 @@ https://github.com/user-attachments/assets/e7705840-1090-46ba-9dfa-fc6da221b1ad
 # 🎞️ Movies APP
 
 Movies APP es una aplicación de prueba técnica desarrollado con NextJS, Styled Components y TS. La aplicación puede servir como watch list gracias a su caracteristica principal de añadir a favoritos.
+
 🚀 Puedes probar esta aplicación en [mallas-app.vercel.app](https://mallas-app.vercel.app/)
 
 ## 💻 Instalación local
