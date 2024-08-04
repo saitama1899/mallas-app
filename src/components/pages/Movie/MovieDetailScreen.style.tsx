@@ -121,17 +121,6 @@ const CompaniesGrid = styled.div`
   padding-bottom: 60px;
   user-select: none;
   height: auto;
-  &::-webkit-scrollbar {
-    height: 5px;
-  }
-  
-  &::-webkit-scrollbar-thumb {
-    background-color: ${(props) => props.theme.colors.primary};
-  }
-  
-  &::-webkit-scrollbar-track {
-    background-color: ${(props) => props.theme.colors.scrollbar};
-  }
 
   &:active {
     cursor: grabbing;

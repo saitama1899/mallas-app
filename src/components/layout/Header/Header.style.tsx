@@ -20,7 +20,7 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-const FavCount = styled.a`
+const FavCount = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 8px;
