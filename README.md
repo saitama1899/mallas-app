@@ -109,9 +109,11 @@ src/
 
 - Inicialmente trabajé con la API de Marvel, utilizando la librería crypto para generar el hash, pero tuve que buscar una alternativa debido a los problemas de latencia del servicio. Busqué una alternativa que cubriera los requisitos a nivel de funcionalidad y diseño, encontrando en la api de TMDB un sustituo perfecto y rápido.
 
-- Las cards se han hecho mas altas para encajar mejor con la temática de los pósters.
+- Las cards se han hecho mas altas para encajar mejor con la temática de los pósters. Se ha sustituido el logo por el mismo motivo.
 
-- Se ha sustituido el logo para encajar con la temática.
+- He manejado las imagenes tanto de portada como de compañias de las dos peticiones que se hacen a la api de tmdb de manera que se asigna un placeholder en caso de que no venga imagen.
+
+- Se han optimizado las imagenes y se utilizan con el componente de Next Image.
 
 - Apenas he tenido problemas durante el desarrollo mas allá de algún problema con la hidratación del ssr.
 
@@ -119,7 +121,8 @@ src/
 
 - Cosas que podrían mejorar:
   - Añadir tests básicos o no haber hecho TDD
-  - Mejorar las animaciones de la interfaz.
+  - Manejo de errores que eviten que pueda caer la aplicación.
+  - Mejorar las animaciones de la interfaz
 
 
 
