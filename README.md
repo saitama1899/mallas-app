@@ -126,12 +126,12 @@ src/
   - Mejorar las animaciones de la interfaz
 
 - Algunos de los recursos consultados durante el desarrollo
-- https://nextjs.org/docs
-- https://www.dhiwise.com/post/step-by-step-guide-to-nextjs-styled-components
-- https://developer.themoviedb.org/docs/getting-started
-- https://stackoverflow.com/questions/71706064/react-18-hydration-failed-because-the-initial-ui-does-not-match-what-was-render
-- https://vercel.com/
-- https://screen-recorder.com/
+  - https://nextjs.org/docs
+  - https://www.dhiwise.com/post/step-by-step-guide-to-nextjs-styled-components
+  - https://developer.themoviedb.org/docs/getting-started
+  - https://stackoverflow.com/questions/71706064/react-18-hydration-failed-because-the-initial-ui-does-not-match-what-was-render
+  - https://vercel.com/
+  - https://screen-recorder.com/
 
 ## Más sobre mi
 Tengo una demo de código de mi trabajo actual que puede servir como complemento a esta prueba, donde afronto otro tipo de desafios. Puedes verla en [este repositorio](https://gitfront.io/r/eselva92/GSVUBuEecD8H/ericselva/tree/demo/front-demo/): 
