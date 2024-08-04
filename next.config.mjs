@@ -1,4 +1,5 @@
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import TerserPlugin from "terser-webpack-plugin";
 
 const nextConfig = {
 	webpack: (config, { dev, isServer }) => {
