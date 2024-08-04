@@ -139,6 +139,11 @@ src/
   - https://vercel.com/
   - https://screen-recorder.com/
 
+## Google Insights
+
+![image](https://github.com/user-attachments/assets/dd9f2ce0-6ddf-47dd-9cc8-0e22162917bf)
+
+
 ## Más sobre mi
 Tengo una demo de código de mi trabajo actual que puede servir como complemento a esta prueba, donde afronto otro tipo de desafios. Puedes verla en [este repositorio](https://gitfront.io/r/eselva92/GSVUBuEecD8H/ericselva/tree/demo/front-demo/): 
 
