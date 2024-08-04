@@ -110,6 +110,12 @@ src/
 
 - Inicialmente trabajé con la API de Marvel, utilizando la librería crypto para generar el hash, pero tuve que buscar una alternativa debido a los problemas de latencia del servicio. Busqué una alternativa que cubriera los requisitos a nivel de funcionalidad y diseño, encontrando en la api de TMDB un sustituo perfecto y rápido.
 
+- Se ha implementado caché del lado del cliente para la gestión del almacenamiento de las películas favoritas, utilizándose tambén para comparar los resultados recibidos con los almacenados en el navegador para distinguir cuales son o no favoritas.
+
+- Cuando el input de búsqueda queda vacío, se hace la petición inicial de nuevo para mostrar algo en el contenido. También se podría cachear esta petición inicial del lado de cliente o servidor.
+
+- Se ha añadido lógica de debounce para evitar exceso de consultas a la api mientras el usuario escribe.
+
 - Las cards se han hecho mas altas para encajar mejor con la temática de los pósters. Se ha sustituido el logo por el mismo motivo.
 
 - He manejado las imagenes tanto de portada como de compañias de las dos peticiones que se hacen a la api de tmdb de manera que se asigna un placeholder en caso de que no venga imagen.
