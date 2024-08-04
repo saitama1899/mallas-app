@@ -6,7 +6,7 @@ const HeaderWrapper = styled.header`
   width: 100%;
   background-color: black;
   color: white;
-  height: ${({ theme }) => theme.layout.headerHeight};
+  height: ${({ theme }) => theme.layout.header_height};
   text-align: center;
   display: flex;
   justify-content: space-between;

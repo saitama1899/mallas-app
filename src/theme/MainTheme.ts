@@ -8,7 +8,7 @@ export const MainTheme: DefaultTheme = {
 		scrollbar: "#D9D9D9",
 	},
 	layout: {
-		headerHeight: "84px",
+		header_height: "84px",
 	},
 	breakpoints: {
 		xs: "320px",

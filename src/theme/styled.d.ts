@@ -9,7 +9,7 @@ declare module "styled-components" {
 			scrollbar: string;
 		};
 		layout: {
-			headerHeight: string;
+			header_height: string;
 		};
 		breakpoints: {
 			xs: string;

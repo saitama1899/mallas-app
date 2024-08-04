@@ -8,8 +8,8 @@ const LayoutWrapper = styled.div`
 
 const MainContent = styled.main<{ hide: boolean }>`  
   flex: 1;
-  margin-top: ${({ hide, theme }) => (hide ? "0" : theme.layout.headerHeight)};
-  height: calc(100vh - ${({ theme }) => theme.layout.headerHeight});
+  margin-top: ${({ hide, theme }) => (hide ? "0" : theme.layout.header_height)};
+  height: calc(100vh - ${({ theme }) => theme.layout.header_height});
 `;
 
 export { LayoutWrapper, MainContent };
