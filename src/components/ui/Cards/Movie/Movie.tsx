@@ -19,7 +19,7 @@ const Movies: (movie: Movie) => JSX.Element = (movie: Movie) => {
 				<MovieTitle>{movie.title}</MovieTitle>
 				<Image
 					src={`/images/icons/${movie.favorite ? "fav" : "no-fav"}.svg`}
-					alt="Marvel Logo"
+					alt="Fav"
 					className="fav"
 					onClick={(e) => handleFavorite(e, movie)}
 					width={17}

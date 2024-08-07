@@ -40,7 +40,7 @@ const MovieDetail: React.FC<MovieDetailScreenProps> = ({ movie }) => {
 							<Title>{movie.title}</Title>
 							<Image
 								src={`/images/icons/${checkFavoriteDetail(movie) ? "fav" : "no-fav"}.svg`}
-								alt="Marvel Logo"
+								alt="Fav"
 								className="fav"
 								width={24}
 								height={21}

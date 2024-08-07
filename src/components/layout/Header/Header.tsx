@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 			<Link href={"/"}>
 				<Image
 					src="/images/movies-logo.svg"
-					alt="Marvel Logo"
+					alt="Movie Logo"
 					className="logo"
 					width={130}
 					height={52}
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
 				<FavCount>
 					<Image
 						src={`/images/icons/${favCount > 0 ? "fav" : "no-fav"}.svg`}
-						alt="Marvel Logo"
+						alt="Fav"
 						className="fav"
 						width={17}
 						height={15}

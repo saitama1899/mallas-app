@@ -6,8 +6,14 @@ import fetchData from "@/utils/api";
 import { mapMovieDetail, mapMovies } from "@/utils/movies";
 
 const useMovies = () => {
-	const { setLoading, setResults, setMovies, setSelectedMovie } =
-		useAppContext();
+	const {
+		setLoading,
+		setResults,
+		setMovies,
+		setSelectedMovie,
+		movies,
+		selectedMovie,
+	} = useAppContext();
 	const { popular, movie } = apiPaths;
 
 	const getMovies = async () => {
@@ -46,7 +52,14 @@ const useMovies = () => {
 			setLoading(false);
 		}
 	};
-	return { getMovies, getMovie };
+	return {
+		getMovies,
+		getMovie,
+		setMovies,
+		setSelectedMovie,
+		movies,
+		selectedMovie,
+	};
 };
 
 export default useMovies;
