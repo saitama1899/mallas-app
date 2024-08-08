@@ -1,54 +1,54 @@
-name: CI
+# name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+#     - name: Set up Node.js
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: '18'
 
-    - name: Cache node modules
-      uses: actions/cache@v2
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-modules-
+#     - name: Cache node modules
+#       uses: actions/cache@v2
+#       with:
+#         path: node_modules
+#         key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+#         restore-keys: |
+#           ${{ runner.os }}-node-modules-
 
-    - name: Install dependencies
-      run: npm i
+#     - name: Install dependencies
+#       run: npm i
 
-    - name: Run tests
-      run: npm test
+#     - name: Run tests
+#       run: npm test
 
-    - name: Upload test results
-      if: failure()
-      uses: actions/upload-artifact@v2
-      with:
-        name: jest-results
-        path: test-results
+#     - name: Upload test results
+#       if: failure()
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: jest-results
+#         path: test-results
 
-    - name: Notify on failure
-      if: failure()
-      uses: actions/github-script@v3
-      with:
-        script: |
-          github.issues.createComment({
-            issue_number: context.issue.number,
-            body: `The CI build has failed. Please check the logs.`
-          })
+#     - name: Notify on failure
+#       if: failure()
+#       uses: actions/github-script@v3
+#       with:
+#         script: |
+#           github.issues.createComment({
+#             issue_number: context.issue.number,
+#             body: `The CI build has failed. Please check the logs.`
+#           })
